@@ -23,7 +23,7 @@ import { GITHUB_TOKEN } from './utils/constants';
 const httpLink = new HttpLink({ uri:'https://api.github.com/graphql' });
 
 const middleWareAuthLink = new ApolloLink((operation,forward) => {
-  const token = GITHUB_TOKEN;
+  const token = process.env.REACT_APP_GITHUB_TOKEN;
   operation.setContext({
     headers: {
       Authorization: `bearer ${token}`
@@ -39,7 +39,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer, applyMiddleware(thunk));
 
 
 ReactDOM.render(
