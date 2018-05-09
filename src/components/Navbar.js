@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Ribbon = styled.div`
   width:100%;
@@ -9,6 +10,10 @@ const Ribbon = styled.div`
 
 const NavItem = styled.span`
   font-family: Helvetica;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  margin: 10px;
+  color: white;
 `;
 
 class Navbar extends React.Component {
@@ -16,10 +21,10 @@ class Navbar extends React.Component {
     return(
       <div>
         <Ribbon>
-          <NavItem>Profile</NavItem>
-          <NavItem>Recent Activities</NavItem>
-          <NavItem>All Repositories</NavItem>
-          <NavItem>Members</NavItem>
+          <NavItem><Link to='/'>Profile</Link></NavItem>
+          <NavItem><Link to='/recent'>Recent Activities</Link></NavItem>
+          <NavItem><Link to='/repos'>All Repositories</Link></NavItem>
+          <NavItem><Link to='/members'>Members</Link></NavItem>
         </Ribbon>
       </div>
     )
