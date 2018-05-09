@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-class OrganisationInfo extends React.Component{        
+class OrganisationInfo extends React.Component{
     render() {
         return(
             <div>
@@ -32,6 +32,6 @@ export const ORGANISATION_INFO_QUERY = gql`
       description
     }
   }
-`
+`;
 
 export default graphql(ORGANISATION_INFO_QUERY,{name:'organisationQuery'})(OrganisationInfo);
